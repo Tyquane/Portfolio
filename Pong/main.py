@@ -89,17 +89,17 @@ while True:
     if ball.ycor() > 290: # This is the upper boarder for the ball to bounce off from (Top)
         ball.sety(290) # This tells the ball not to go any further than the 290 coordinate
         ball.dy *= -1 # This tells the ball to head downwards by -1 once is reaches the 290 coordinate
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
+        winsound.PlaySound("Assets/bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
 
     if ball.ycor() < -290: # This is the lower boarder for the ball to bounce off from (Bottom)
         ball.sety(-290) # This tells the ball not to go any further than the -290 coordinate
         ball.dy *= -1 # This tells the ball to head upwards by -1 once is reaches the -290 coordinate
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
+        winsound.PlaySound("Assets/bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
 
     if ball.xcor() > 390: # This is the right boarder for the ball to bounce off from (Right)
         ball.goto(0, 0) # This tells the ball not to go any further than the 0, 0 coordinate
         ball.dx *= -1 # This tells the ball to head downwards by -1 once is reaches the 0, 0 coordinate
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
+        winsound.PlaySound("Assets/bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
         score_a += 1 
         pen.clear() # This clears the old score before the new score appears over it
         pen.write("Player One: {}  Player Two: {}".format(score_a, score_b), align="center", font=("Courier", 24, "bold"))
@@ -107,7 +107,7 @@ while True:
     if ball.xcor() < -390: # This is the left boarder for the ball to bounce off from (Left)
         ball.goto(0, 0) # This tells the ball not to go any further than the 0, 0 coordinate
         ball.dx *= -1 # This tells the ball to head downwards by -1 once is reaches the 0, 0 coordinate
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
+        winsound.PlaySound("Assets/bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits border
         score_b += 1
         pen.clear() # This clears the old score before the new score appears over it
         pen.write("Player One: {}  Player Two: {}".format(score_a, score_b), align="center", font=("Courier", 24, "bold"))
@@ -116,9 +116,9 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
         ball.setx(340)
         ball.dx *= -1
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits paddle
+        winsound.PlaySound("Assets/bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits paddle
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() -40):
         ball.setx(-340)
         ball.dx *= -1
-        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits paddle
+        winsound.PlaySound("Assets/bounce.wav", winsound.SND_ASYNC) # This plays the bounce.wav sound when the ball hits paddle
