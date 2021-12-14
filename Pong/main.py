@@ -1,15 +1,17 @@
 import turtle # This is a bulit in module called Turtle. (This is not Pygame!)
 import winsound # This import sound module
 
+
 wn = turtle.Screen() # This is how you create the screen
 wn.title("Pong") # This is where you can change the title
 wn.bgcolor("black") # This is where you made the background black
 wn.setup(width=800, height=600) # This is where you set the dimensions of the game window
 wn.tracer(0) # Assist with game speed and refresh
 
+
 # Score
-score_a = 0 # This created the variable for scoreA
-score_b = 0 # This created the variable for scoreB
+score_a = 0 # This created the variable for score_a
+score_b = 0 # This created the variable for score_b
 
 
 # Paddle A
@@ -45,11 +47,11 @@ ball.dy = -0.25 # This is where the ball movement is set (How fast the ball will
 
 # Pen
 pen = turtle.Turtle()
-pen.speed(0)
-pen.color("white")
+pen.speed(0) # This is how control the speed of the text display
+pen.color("white") # This is where you choose the color of the text
 pen.penup()
 pen.hideturtle()
-pen.goto(0, 260)
+pen.goto(0, 260) # This is where you decide the placement of the paddle
 pen.write("Player One: 0  Player Two: 0", align="center", font=("Courier", 24, "bold")) # This is where you can adjust your font, font size, and Display Message
 
 
@@ -88,7 +90,7 @@ while True:
     wn.update()
     
     # Move The ball
-    ball.setx(ball.xcor() + ball.dx)
+    ball.setx(ball.xcor() + ball.dx) 
     ball.sety(ball.ycor() + ball.dy)
 
     # Boundaries
