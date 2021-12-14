@@ -5,11 +5,12 @@ wn = turtle.Screen() # This is how you create the screen
 wn.title("Pong") # This is where you can change the title
 wn.bgcolor("black") # This is where you made the background black
 wn.setup(width=800, height=600) # This is where you set the dimensions of the game window
-wn.tracer(0)
+wn.tracer(0) # Assist with game speed and refresh
 
 # Score
 score_a = 0 # This created the variable for scoreA
 score_b = 0 # This created the variable for scoreB
+
 
 # Paddle A
 paddle_a = turtle.Turtle()
@@ -20,6 +21,7 @@ paddle_a.shapesize(stretch_wid=5, stretch_len=1) # This is where you decide the 
 paddle_a.penup()
 paddle_a.goto(-350, 0) # This is where you decide the placement of the paddle
 
+
 # Paddle B
 paddle_b = turtle.Turtle()
 paddle_b.speed(0) # This is how control the speed of the paddle
@@ -28,6 +30,7 @@ paddle_b.color("white") # This is where you decide the color of the paddle
 paddle_b.shapesize(stretch_wid=5, stretch_len=1) # This is where you decide the shape of the paddle
 paddle_b.penup()
 paddle_b.goto(350, 0) # This is where you decide the placement of the paddle
+
 
 # Ball
 ball = turtle.Turtle()
@@ -38,6 +41,7 @@ ball.penup()
 ball.goto(0, 0) # This is where you decide the placement of the paddle
 ball.dx = 0.25 # This is where the ball movement is set (How fast the ball will move on screen) (Ball moves 0.25 pixels over)
 ball.dy = -0.25 # This is where the ball movement is set (How fast the ball will move on screen) (Ball moves 0.25 pixels over)
+
 
 # Pen
 pen = turtle.Turtle()
@@ -52,36 +56,38 @@ pen.write("Player One: 0  Player Two: 0", align="center", font=("Courier", 24, "
 # Function
 def paddle_a_up():
     y = paddle_a.ycor()
-    y += 20 # This where you set the upward movement distance for paddleA
-    paddle_a.sety(y)
+    y += 20 # This where you set the upward movement distance for paddle_a
+    paddle_a.sety(y) # Sets paddle_a to the new y coordinate
 
 def paddle_a_down():
     y = paddle_a.ycor()
-    y -= 20 # This where you set the downward movement distance for paddleA
-    paddle_a.sety(y)
+    y -= 20 # This where you set the downward movement distance for paddle_a
+    paddle_a.sety(y) # Sets paddle_a to the new y coordinate
 
 def paddle_b_up():
     y = paddle_b.ycor()
-    y += 20 # This where you set the upward movement distance for paddleB
-    paddle_b.sety(y)
+    y += 20 # This where you set the upward movement distance for paddle_b
+    paddle_b.sety(y) # Sets paddle_b to the new y coordinate
 
 def paddle_b_down():
     y = paddle_b.ycor()
-    y -= 20 # This where you set the downward movement distance for paddleB
-    paddle_b.sety(y)
+    y -= 20 # This where you set the downward movement distance for paddle_b
+    paddle_b.sety(y) # Sets paddle_b to the new y coordinate
+
 
 # Keyboard Input
-wn.listen()
+wn.listen() # Tells the keyboard to listen for keyboard stroke
 wn.onkeypress(paddle_a_up, "q") # This is where you set the button for moving paddleA upwards
 wn.onkeypress(paddle_a_down, "a") # This is where you set the button for moving paddleA downwards
 wn.onkeypress(paddle_b_up, "Up") # This is where you set the button for moving paddleB upwards
 wn.onkeypress(paddle_b_down, "Down")  # This is where you set the button for moving paddleB downwards
 
+
 # Main Game Loop
 while True:
     wn.update()
     
-    # Move the ball
+    # Move The ball
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
@@ -112,7 +118,7 @@ while True:
         pen.clear() # This clears the old score before the new score appears over it
         pen.write("Player One: {}  Player Two: {}".format(score_a, score_b), align="center", font=("Courier", 24, "bold"))
 
-    # Paddle and Ball Collisions
+    # Paddle And Ball Collisions
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() -40):
         ball.setx(340)
         ball.dx *= -1
