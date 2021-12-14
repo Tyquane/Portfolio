@@ -1,38 +1,38 @@
-import numpy as np # This is a module for Python. (This is not Pygame!)
-import pygame
+import numpy as np # This is a module for Python
+import pygame # This is a module for Python
 import sys
-import math
+import math # Needed for advance math
 
 # RGB
-BLUE = (0,0,255)
-BLACK = (0,0,0)
-RED = (255,0,0)
-YELLOW = (255,255,0)
+BLUE = (0,0,255) # The is defining the colors RGB value (Red, Green, Blue) 
+BLACK = (0,0,0) # The is defining the colors RGB value (Red, Green, Blue)
+RED = (255,0,0) # The is defining the colors RGB value (Red, Green, Blue)
+YELLOW = (255,255,0) # The is defining the colors RGB value (Red, Green, Blue)
 
 # Rows and Columns
-ROW_COUNT = 6
-COLUMN_COUNT = 7
+ROW_COUNT = 6 # This is where you set the number of rows
+COLUMN_COUNT = 7 # This is where you set the number of columns
 
 # Defining Variables
 def create_board(): # This is where you are defining the variable
     board = np.zeros((ROW_COUNT, COLUMN_COUNT)) # This is where you decide how many rows and colums are displayed (up/down, right/left)
     return board # This is where your returning the function
 
-def drop_piece(board, row, col, piece):
+def drop_piece(board, row, col, piece): # This is where you are defining the variable
     board[row][col] = piece
     
-def is_valid_location(board, col):
+def is_valid_location(board, col): # This is where you are defining the variable
     return board[ROW_COUNT-1][col] == 0
 
-def get_next_open_row(board, col):
+def get_next_open_row(board, col): # This is where you are defining the variable
     for r in range(ROW_COUNT):
         if board[r][col] == 0:
             return r
 
-def print_board(board):
+def print_board(board): # This is where you are defining the variable
     print(np.flip(board, 0))
 
-def winning_move(board, piece):
+def winning_move(board, piece): # This is where you are defining the variable
     # Check horizontal locations for win
     for c in range(COLUMN_COUNT-3):
         for r in range(ROW_COUNT): 
@@ -57,7 +57,7 @@ def winning_move(board, piece):
             if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
                 return True 
 
-def draw_board(board):
+def draw_board(board): # This is where you are defining the variable
     for c in range(COLUMN_COUNT):
         for r in range(ROW_COUNT):
             pygame.draw.rect(screen, BLUE, (c*SQUARESIZE, r*SQUARESIZE+SQUARESIZE, SQUARESIZE, SQUARESIZE))
@@ -77,7 +77,7 @@ print_board(board)
 game_over = False
 turn = 0
 
-pygame.init() 
+pygame.init() # Initialized pygame
 
 SQUARESIZE = 100
 
