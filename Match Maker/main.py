@@ -24,15 +24,16 @@ def show_symbol(x,y):
             buttons[x,y] = DISABLED
         first = True
 
+#
 win = Tk()
 win.title('Matchmaker') # This is where you can edit the Title
 win.resizable(width=False, height=False)
 first = True
 previousx = 0
 previousy = 0
-
 buttons = {}
 button_symbols = {}
+
 
 # Create Symbols For Game
 symbols=[u'\u2702',u'\u2705',u'\u2708',u'\u2709',u'\u270A',u'\u270B',
@@ -40,6 +41,8 @@ symbols=[u'\u2702',u'\u2705',u'\u2708',u'\u2709',u'\u270A',u'\u270B',
          u'\u2702',u'\u2705',u'\u2708',u'\u2709',u'\u270A',u'\u270B',
          u'\u270C',u'\u270F',u'\u2712',u'\u2714',u'\u2716',u'\u2728']
 
+
+#
 random.shuffle(symbols)
 
 for x in range(6):

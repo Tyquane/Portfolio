@@ -1,12 +1,10 @@
 import pygame
 from pygame.locals import *
 
+
 pygame.init()
-
-
 screen_width = 300
 screen_height = 300
-
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('TicTacToe')
 
@@ -20,11 +18,14 @@ player = 1
 winner = 0
 game_over = False
 
+
 # Define Colors
 font = pygame.font.SysFont(None, 40)
 
+
 # Define Font
 font = pygame.font.SysFont(None, 40)
+
 
 # Create Play Again Rectangle
 again_rect = Rect(screen_width // 2 - 80, screen_height // 2, 160, 50)
@@ -35,6 +36,7 @@ green = (0, 255, 0)
 red = (255, 0, 0)
 blue = (0, 0, 255)
 
+#
 def draw_grid():
     bg = (255, 255, 200)
     grid = (50, 50, 50)
@@ -102,6 +104,7 @@ def draw_winner(winner):
     pygame.draw.rect(screen, green, (screen_width // 2 - 100, screen_height // 2 - 60, 200, 50))
     screen.blit(win_img, (screen_width // 2 - 100, screen_height // 2 - 50))
 
+    #
     again_text = 'Play Again?'
     again_img = font.render(again_text, True, blue)
     pygame.draw.rect(screen, green, again_rect)

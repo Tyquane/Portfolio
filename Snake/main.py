@@ -1,7 +1,3 @@
-#
-# 
-# 
-
 import turtle
 import time
 import random
@@ -12,12 +8,14 @@ delay = 0.1
 score = 0
 high_score = 0
 
+
 # Screen Setup
 wn = turtle.Screen()
 wn.title("Snake") # This is where you change the Title 
 wn.bgcolor("green") # This is where you set the background color
 wn.setup(width=600, height=600) # This is where you set up the game dimensions
 wn.tracer(0) # Turns off the screen updates
+
 
 # Snake Head
 head = turtle.Turtle()
@@ -28,6 +26,7 @@ head.penup()
 head.goto(0,0)
 head.direction = "stop" # This is where you can decide the direction the snake will go
 
+
 # Snake Food
 food = turtle.Turtle()
 food.speed(0) # This is the animation speed
@@ -36,7 +35,9 @@ food.color("red")
 food.penup()
 food.goto(0,100) # Starting position
 
+#
 segments = []
+
 
 # Pen
 pen = turtle.Turtle()
@@ -47,6 +48,7 @@ pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
 pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "bold"))
+
 
 # Functions
 def go_up():
@@ -82,12 +84,14 @@ def move():
         x = head.xcor()
         head.setx(x + 20)
 
+
 # Keyboard Bindings
 wn.listen()
 wn.onkeypress(go_up, "w") # The Snake will go up when you press w on the keyboard
 wn.onkeypress(go_down, "s") # The Snake will go down when you press s on the keyboard
 wn.onkeypress(go_left, "a") # The Snake will go left when you press a on the keyboard
 wn.onkeypress(go_right, "d") # The Snake will go right when you press d on the keyboard
+
 
 # Main Game Loop
 while True:
@@ -116,6 +120,7 @@ while True:
         pen.clear() # This allows the new score to be drawn over the old score
         pen.write("Score: {} High Score {}".format(score, high_score), align="center", font =("Courier", 24, "bold")) # This shows the user the high score with font
 
+
     # Check for a collision with the food
     if head.distance(food) < 20:
         # Move the food to a random spot
@@ -143,12 +148,14 @@ while True:
         pen.clear() # This allows the new score to be drawn over the old score
         pen.write("Score: {} High Score {}".format(score, high_score), align="center", font =("Courier", 24, "bold"))
 
+
     # Move the end segments first in reverse order
     for index in range(len(segments)-1, 0, -1):
         x = segments[index-1].xcor()
         y = segments[index-1].ycor()
         segments[index].goto(x, y)
     
+
     # Move segment 0 to where the head is
     if len(segments) > 0:
         x = head.xcor()
@@ -156,6 +163,7 @@ while True:
         segments[0].goto(x,y)
 
     move()
+
 
     # Check for head collision with the body segments
     for segment in segments:
