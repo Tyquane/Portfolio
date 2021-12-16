@@ -1,5 +1,5 @@
 from os import truncate
-import pygame
+import pygame # Imported module
 import random
 import button # This is being imported from the button.py file in the Battle folder
 
@@ -8,6 +8,7 @@ pygame.init()
 # Frame Rate
 clock = pygame.time.Clock()
 fps = 60
+
 
 # Game Window
 bottom_panel = 150 # This will represent the area that the bottom pictures takes up
@@ -81,7 +82,7 @@ def draw_panel():
     draw_text(f'{knight.name} HP: {knight.hp}', font, red, 100, screen_height - bottom_panel +  10)
     for count, i in enumerate(bandit_list):
         
-        # Show name and health
+        # Show Name and Health
         draw_text(f'{i.name} HP: {i.hp}', font, red, 550, (screen_height - bottom_panel + 10) + count * 60)
 
 
@@ -205,6 +206,7 @@ class Fighter():
 
 
     def reset(self):
+        
         self.alive = True
         self.potions = self.start_portions
         self.hp = self.max_hp
@@ -214,6 +216,7 @@ class Fighter():
 
 
     def draw(self):
+        
         screen.blit(self.image, self.rect)
 
 
@@ -284,6 +287,7 @@ while run:
     # Draw Background
     draw_bg()
 
+
     # Draw Panel
     draw_panel()
     knight_health_bar.draw(knight.hp)
@@ -341,13 +345,14 @@ while run:
                 action_cooldown += 1
                 if action_cooldown >= action_wait_time:
                     
-                    # Look For Player action
-                    # Attack
+                    
+                    # Attack (Look For Player action)
                     if attack == True and target != None:
                         knight.attack(target) # This is who is being attacked. This is choosen by who the Player has clicked on.
                         current_fighter += 1
                         action_cooldown = 0
                     
+
                     # Potion
                     if potion == True:
                         if knight.potions > 0:
@@ -365,6 +370,7 @@ while run:
                             action_cooldown = 0
         else:
             game_over = -1                
+
 
         # Enemy Action
         for count, bandit in enumerate(bandit_list):

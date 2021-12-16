@@ -130,6 +130,8 @@ while running:
                     bullet_Sound.play() # This function calls to play the laser.wav sound
                     bulletX = playerX # Get the current x coordinate of the spaceship
                     fire_bullet(bulletX, bulletY)
+        
+        
         # If the a Key is released than stop             
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -184,6 +186,7 @@ while running:
     if bulletY <=0:
         bulletY = 480
         bullet_state = "ready"
+
 
     if bullet_state is "fire": 
         fire_bullet(bulletX, bulletY)

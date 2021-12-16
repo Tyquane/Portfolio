@@ -36,7 +36,8 @@ green = (0, 255, 0)
 red = (255, 0, 0)
 blue = (0, 0, 255)
 
-#
+
+# Define Background
 def draw_grid():
     bg = (255, 255, 200)
     grid = (50, 50, 50)
@@ -104,7 +105,7 @@ def draw_winner(winner):
     pygame.draw.rect(screen, green, (screen_width // 2 - 100, screen_height // 2 - 60, 200, 50))
     screen.blit(win_img, (screen_width // 2 - 100, screen_height // 2 - 50))
 
-    #
+    # Loser
     again_text = 'Play Again?'
     again_img = font.render(again_text, True, blue)
     pygame.draw.rect(screen, green, again_rect)
@@ -153,6 +154,7 @@ while run:
                     for x in range(3):
                         row = [0] * 3
                         markers.append(row)
+
 
     pygame.display.update()
            

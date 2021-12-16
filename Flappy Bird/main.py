@@ -1,10 +1,10 @@
 import pygame, sys, random
 
-
-#
+# Define Functions
 def draw_floor():
     screen.blit(floor_surface, (floor_x_pos,900))
     screen.blit(floor_surface, (floor_x_pos + 576,900))
+
 
 def create_pipe():
     random_pipe_pos = random.choice(pipe_height)
@@ -12,11 +12,13 @@ def create_pipe():
     top_pipe = pipe_surface.get_rect(midbottom = (700,random_pipe_pos - 300))
     return bottom_pipe, top_pipe
 
+
 def move_pipes(pipes):
     for pipe in pipes:
         pipe.centerx -= 5
     visible_pipes = [pipe for pipe in pipes if pipe.right > -50]
     return visible_pipes
+
 
 def draw_pipes(pipes):
     for pipe in pipes:
@@ -25,6 +27,7 @@ def draw_pipes(pipes):
         else:
             flip_pipe = pygame.transform.flip(pipe_surface,False,True)
             screen.blit(flip_pipe,pipe)
+
 
 def check_collision(pipes):
     global can_score
@@ -39,14 +42,17 @@ def check_collision(pipes):
         return False
     return True
 
+
 def rotate_bird(bird):
     new_bird = pygame.transform.rotozoom(bird, -bird_movement * 3,1)
     return new_bird
+
 
 def bird_animation():
     new_bird = bird_frames[bird_index]
     new_bird_rect = new_bird.get_rect(center = (100,bird_rect.centery))
     return new_bird, new_bird_rect
+
 
 def score_display(game_state):
     if game_state == 'main_game':
@@ -62,10 +68,12 @@ def score_display(game_state):
         high_score_rect = high_score_surface.get_rect(center = (288,850))
         screen.blit(high_score_surface,high_score_rect)
 
+
 def update_score(score, high_score):
     if score > high_score:
         high_score = score
     return high_score
+
 
 def pipe_score_check():
     global score, can_score
@@ -121,7 +129,7 @@ score_sound = pygame.mixer.Sound('Assets/sfx_point.wav')
 score_sound_countdown = 100
 
 
-#
+# Game Loop
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
