@@ -1,4 +1,4 @@
-#!C:\Users\tyqua\Desktop\General\Divergence\2021_10_DSI_WD\tyquane.williams@divergence.one\App\env\Scripts\python.exe
+#!C:\Users\tyqua\OneDrive\Desktop\General\Portfolio\App\env\Scripts\python.exe
 # -*- coding: utf8 -*-
 # :Copyright: © 2015 Günter Milde.
 # :License: Released under the terms of the `2-Clause BSD license`_, in short:

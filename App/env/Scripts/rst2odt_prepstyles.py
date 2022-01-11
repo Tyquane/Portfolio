@@ -1,4 +1,4 @@
-#!C:\Users\tyqua\Desktop\General\Divergence\2021_10_DSI_WD\tyquane.williams@divergence.one\App\env\Scripts\python.exe
+#!C:\Users\tyqua\OneDrive\Desktop\General\Portfolio\App\env\Scripts\python.exe
 
 # $Id: rst2odt_prepstyles.py 8346 2019-08-26 12:11:32Z milde $
 # Author: Dave Kuhlman <dkuhlman@rexx.com>

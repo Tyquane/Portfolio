@@ -1,4 +1,4 @@
-#!C:\Users\tyqua\Desktop\General\Divergence\2021_10_DSI_WD\tyquane.williams@divergence.one\App\env\Scripts\python.exe
+#!C:\Users\tyqua\OneDrive\Desktop\General\Portfolio\App\env\Scripts\python.exe
 
 # $Id: rst2s5.py 4564 2006-05-21 20:44:42Z wiemann $
 # Author: Chris Liechti <cliechti@gmx.net>

@@ -1,4 +1,4 @@
-#!C:\Users\tyqua\Desktop\General\Divergence\2021_10_DSI_WD\tyquane.williams@divergence.one\App\env\Scripts\python.exe
+#!C:\Users\tyqua\OneDrive\Desktop\General\Portfolio\App\env\Scripts\python.exe
 
 # $Id: rst2latex.py 5905 2009-04-16 12:04:49Z milde $
 # Author: David Goodger <goodger@python.org>

@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\tyqua\Desktop\General\Divergence\2021_10_DSI_WD\tyquane.williams@divergence.one\App\env
+set VIRTUAL_ENV=C:\Users\tyqua\OneDrive\Desktop\General\Portfolio\App\env
 
 if not defined PROMPT set PROMPT=$P$G
 

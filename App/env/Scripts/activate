@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\tyqua\Desktop\General\Divergence\2021_10_DSI_WD\tyquane.williams@divergence.one\App\env"
+VIRTUAL_ENV="C:\Users\tyqua\OneDrive\Desktop\General\Portfolio\App\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
